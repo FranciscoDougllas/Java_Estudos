@@ -14,5 +14,7 @@ public class Tabuada_For {
         for (int i = 1; i <= x; i ++){
             System.out.println(n + " x " + i + " = " + n*i);
         }
+        sc.close();
+        System.out.println("Tabuada finalizada!");
     }
 }
