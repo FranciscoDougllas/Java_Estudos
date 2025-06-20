@@ -13,5 +13,8 @@ public class Pagamentos {
 
         // Chama o método mostrarSalario() do objeto func
         //func.mostrarSalario();
+
+        // Mostra o novo salário do funcionário
+        func.AlteraMostrarSalario(func, 1220);
     }
 }

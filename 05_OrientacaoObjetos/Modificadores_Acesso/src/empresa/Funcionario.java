@@ -38,4 +38,11 @@ public class Funcionario {
     private void metodoPrivado() {
         System.out.println("Este é um método privado.");
     }
+
+
+    //Metodo para Altera e Mostra o Salario
+    public void AlteraMostrarSalario(Funcionario func, double aumento){
+        func.salario += aumento;
+        System.out.println("Salario alterado: " + func.salario);
+    }
 }
