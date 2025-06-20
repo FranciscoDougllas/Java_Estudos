@@ -45,9 +45,9 @@ public class Funcionario {
     }
 
     // Método privado (acessível apenas dentro desta classe)
-    private void metodoPrivado() {
-        System.out.println("Este é um método privado.");
-    }
+    // private void metodoPrivado() {
+    //     System.out.println("Este é um método privado.");
+    // }
 
     // Método para Alterar e Mostrar o Salario
     public void AlteraMostrarSalario(Funcionario func, double aumento){
