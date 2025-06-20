@@ -16,12 +16,22 @@ public class Funcionario {
     // Atributo privado (visível apenas dentro da classe Funcionario)
     private double salario;
 
+    // Membros estáticos (pertencem à classe, não aos objetos)
+    private static int totalFuncionarios = 0;
+    private static double salarioBase = 1500.0;
+
     // Construtor público (pode ser acessado de qualquer lugar)
     public Funcionario(String nomeInit, double salarioInit){
         nome = nomeInit;
         salario = salarioInit;
+        totalFuncionarios++;
         System.out.println("Nome: " + nome);
         System.out.println("Salario: " + salario);
+    }
+
+    // Sobrecarga do construtor - usando salário base
+    public Funcionario(String nomeInit) {
+        this(nomeInit, salarioBase);
     }
 
     // Método protegido (acessível por subclasses e classes do mesmo pacote)
@@ -39,10 +49,30 @@ public class Funcionario {
         System.out.println("Este é um método privado.");
     }
 
-
-    //Metodo para Altera e Mostra o Salario
+    // Método para Alterar e Mostrar o Salario
     public void AlteraMostrarSalario(Funcionario func, double aumento){
         func.salario += aumento;
         System.out.println("Salario alterado: " + func.salario);
+    }
+
+    // Sobrecarga do método AlteraMostrarSalario - usando porcentagem
+    public void AlteraMostrarSalario(Funcionario func, double percentual, boolean ehPercentual){
+        if (ehPercentual) {
+            func.salario += func.salario * (percentual/100);
+            System.out.println("Salario alterado com aumento de " + percentual + "%: " + func.salario);
+        }
+    }
+
+    // Métodos estáticos (podem ser chamados sem instanciar a classe)
+    public static int getTotalFuncionarios() {
+        return totalFuncionarios;
+    }
+
+    public static double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public static void setSalarioBase(double novoSalarioBase) {
+        salarioBase = novoSalarioBase;
     }
 }
